@@ -1,5 +1,5 @@
 # project name (generate executable with this name)
-TARGET   = sacados
+TARGET   = decoupe_optimale
 
 CC       = gcc
 # compiling flags here
@@ -7,7 +7,8 @@ CFLAGS   = -std=c99 -Wall -I.
 
 LINKER   = gcc -o
 # linking flags here
-LFLAGS   = -Wall -I. -lm -lglpk
+LFLAGS   = -Wall -I. -lm
+LIB = -L/usr/local/lib -L/usr/lib -lglpk
 
 # change these to set the proper directories where each files shoould be
 SRCDIR   = src
@@ -21,7 +22,7 @@ rm       = rm -f
 
 
 $(BINDIR)/$(TARGET): $(OBJECTS)
-	@$(LINKER) $@ $(LFLAGS) $(OBJECTS)
+	@$(LINKER) $@ $(LFLAGS) $(OBJECTS) $(LIB)
 	@echo "Linking complete!"
 
 $(OBJECTS): $(OBJDIR)/%.o : $(SRCDIR)/%.c

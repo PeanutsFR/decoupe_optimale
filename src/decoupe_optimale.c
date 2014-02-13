@@ -1,5 +1,7 @@
 /* decoupe_optimale.c */
 
+/* envoyer le fichier à : guyslain.naves@univ-amu.fr */
+
 #include <stdio.h>            /* C input/output                       */
 #include <stdlib.h>           /* C standard library                   */
 #include <glpk.h>        /* GNU GLPK linear/mixed integer solver */
